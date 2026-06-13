@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="h-screen overflow-hidden relative" style={{ background: 'linear-gradient(135deg, #f5eeff 0%, #ede0ff 50%, #f9f4ff 100%)' }}>
+    <div className="h-screen overflow-hidden relative" style={{ background: '#ffffff' }}>
       <div className="absolute inset-0 z-10">
         <Squares
           direction="diagonal"
