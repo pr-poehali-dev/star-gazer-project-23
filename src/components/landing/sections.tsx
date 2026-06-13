@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge"
 export const sections = [
   {
     id: 'hero',
-    subtitle: <Badge variant="outline" className="text-white border-white/40">60 минут · 15 000 ₽ фикс · результат через 1–2 дня</Badge>,
+    subtitle: <Badge variant="outline" className="font-medium" style={{ color: '#7B2FBE', borderColor: '#9D4EDD', background: 'rgba(157,78,221,0.1)' }}>60 минут · 15 000 ₽ фикс · результат через 1–2 дня</Badge>,
     title: "Ваш курс работает хуже, чем должен. За 60 минут я скажу почему.",
     content: "Разбор с экспертом, который 6 лет чинил курсы в крупном EdTech: +10 п.п. к удержанию студентов, −80% негативных отзывов.",
     showButton: true,

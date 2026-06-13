@@ -17,7 +17,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
         </motion.div>
       )}
       <motion.h2
-        className="text-3xl md:text-5xl lg:text-[4rem] xl:text-[5rem] font-bold leading-[1.1] tracking-tight max-w-4xl text-white"
+        className="text-3xl md:text-5xl lg:text-[4rem] xl:text-[5rem] font-bold leading-[1.1] tracking-tight max-w-4xl"
+        style={{ color: '#3C096C' }}
         initial={{ opacity: 0, y: 50 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
@@ -27,7 +28,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
 
       {content && (
         <motion.p
-          className="text-lg md:text-xl max-w-2xl mt-4 text-neutral-400"
+          className="text-lg md:text-xl max-w-2xl mt-4"
+          style={{ color: '#5A189A' }}
           initial={{ opacity: 0, y: 50 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -44,8 +46,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {bullets.map((b, i) => (
-            <li key={i} className="flex items-start gap-3 text-neutral-300 text-base md:text-lg">
-              <span className="mt-0.5 shrink-0 text-[#FF4D00]">
+            <li key={i} className="flex items-start gap-3 text-base md:text-lg" style={{ color: '#3C096C' }}>
+              <span className="mt-0.5 shrink-0" style={{ color: '#9D4EDD' }}>
                 <Icon name={b.icon || "CheckCircle"} size={20} />
               </span>
               <span>{b.text}</span>
@@ -62,9 +64,9 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {objections.map((o, i) => (
-            <div key={i} className="border border-white/10 rounded-xl p-5 bg-white/5">
-              <p className="text-white font-semibold text-sm mb-2">— {o.q}</p>
-              <p className="text-neutral-400 text-sm leading-relaxed">{o.a}</p>
+            <div key={i} className="rounded-xl p-5" style={{ background: 'rgba(157,78,221,0.07)', border: '1px solid rgba(157,78,221,0.2)' }}>
+              <p className="font-semibold text-sm mb-2" style={{ color: '#3C096C' }}>— {o.q}</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#5A189A' }}>{o.a}</p>
             </div>
           ))}
         </motion.div>
@@ -77,15 +79,15 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="rounded-xl overflow-hidden border border-white/10">
-            <div className="grid grid-cols-2 bg-white/10 px-5 py-2 text-xs text-neutral-400 uppercase tracking-wider">
+          <div className="rounded-xl overflow-hidden" style={{ border: '1px solid rgba(157,78,221,0.25)' }}>
+            <div className="grid grid-cols-2 px-5 py-2 text-xs uppercase tracking-wider" style={{ background: 'rgba(157,78,221,0.12)', color: '#7B2FBE' }}>
               <span>Критерий</span>
               <span>Как закрыт</span>
             </div>
             {criteria.map((c, i) => (
-              <div key={i} className={`grid grid-cols-2 px-5 py-3 text-sm border-t border-white/5 ${i % 2 === 0 ? 'bg-white/[0.02]' : ''}`}>
-                <span className="text-white font-medium">{c.criterion}</span>
-                <span className="text-neutral-400">{c.how}</span>
+              <div key={i} className="grid grid-cols-2 px-5 py-3 text-sm" style={{ borderTop: '1px solid rgba(157,78,221,0.1)', background: i % 2 === 0 ? 'rgba(224,170,255,0.08)' : 'transparent' }}>
+                <span className="font-medium" style={{ color: '#3C096C' }}>{c.criterion}</span>
+                <span style={{ color: '#5A189A' }}>{c.how}</span>
               </div>
             ))}
           </div>
@@ -100,9 +102,9 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           className="mt-10"
         >
           <Button
-            variant="outline"
             size="lg"
-            className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors text-base"
+            className="text-white text-base font-semibold transition-all hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, #9D4EDD 0%, #5A189A 100%)', border: 'none' }}
           >
             {buttonText}
           </Button>

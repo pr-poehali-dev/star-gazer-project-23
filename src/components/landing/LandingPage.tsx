@@ -47,16 +47,18 @@ export default function LandingPage() {
         {sections.map((section, index) => (
           <button
             key={section.id}
-            className={`w-3 h-3 rounded-full my-2 transition-all ${
-              index === activeSection ? 'bg-white scale-150' : 'bg-gray-600'
-            }`}
+            className="w-3 h-3 rounded-full my-2 transition-all"
+            style={{
+              background: index === activeSection ? '#9D4EDD' : '#C77DFF55',
+              transform: index === activeSection ? 'scale(1.5)' : 'scale(1)',
+            }}
             onClick={() => handleNavClick(index)}
           />
         ))}
       </nav>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-0.5 bg-white origin-left z-30"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-0.5 origin-left z-30"
+        style={{ scaleX, background: 'linear-gradient(90deg, #9D4EDD, #C77DFF)' }}
       />
       <div
         ref={containerRef}
